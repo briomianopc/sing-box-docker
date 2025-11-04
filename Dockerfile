@@ -1,15 +1,9 @@
 FROM ghcr.io/sagernet/sing-box
 
-WORKDIR /var/lib
+WORKDIR /
 
-RUN mkdir -p /etc/sing-box
+COPY config.json /config.json
 
-RUN touch /etc/sing-box/config.json
-
-COPY start.sh /start.sh
-
-RUN chmod +x /start.sh
-
-ENTRYPOINT ["sh","/start.sh"]  
+ENTRYPOINT ["sing-box","run","-C',"/config.json"]  
 
 EXPOSE 8080
