@@ -4,6 +4,6 @@ WORKDIR /
 
 COPY config.json /config.json
 
-ENTRYPOINT ["sing-box","run","-C',"/config.json"]  
+ENTRYPOINT ["sing-box", "run", "-C", "/config.json"]  
 
 EXPOSE 8080
