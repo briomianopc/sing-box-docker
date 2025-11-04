@@ -2,7 +2,7 @@
 
 PORT=8080
 
-cat <<-EOF > /etc/sing-box/config.json
+cat <<EOF > /etc/sing-box/config.json
 {
   "log": {
     "level": "info",
