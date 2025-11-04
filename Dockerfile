@@ -10,8 +10,6 @@ COPY start.sh /start.sh
 
 RUN chmod +x /start.sh
 
-RUN echo "sing-box run -C /etc/sing-box/config.json" >> /start.sh
-
 ENTRYPOINT ["sh","/start.sh"]  
 
 EXPOSE 8080
