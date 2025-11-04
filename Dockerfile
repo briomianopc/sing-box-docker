@@ -2,8 +2,10 @@ FROM ghcr.io/sagernet/sing-box
 
 WORKDIR /
 
-COPY config.json /config.json
+RUN mkdir -p /etc/sing-box
 
-ENTRYPOINT ["sing-box", "run", "-C", "/config.json"]  
+COPY config.json /etc/sing-box/config.json
+
+ENTRYPOINT ["sing-box", "run", "-C", "/etc/sing-box"]  
 
 EXPOSE 8080
