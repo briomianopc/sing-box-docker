@@ -1,0 +1,29 @@
+{
+  "name": "sing-box",
+  "description": "Deploy sing-box VLESS server on Heroku with optional Cloudflare Tunnel support",
+  "keywords": ["sing-box", "vless", "proxy", "cloudflare"],
+  "stack": "container",
+  "env": {
+    "UUID": {
+      "description": "UUID for VLESS authentication",
+      "value": "",
+      "required": true
+    },
+    "WS_PATH": {
+      "description": "WebSocket path (e.g., /mypath)",
+      "value": "/laowang",
+      "required": false
+    },
+    "CLOUDFLARE_TUNNEL_TOKEN": {
+      "description": "Cloudflare Tunnel Token (optional, leave empty for direct mode)",
+      "value": "",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
