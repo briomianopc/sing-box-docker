@@ -144,4 +144,4 @@ uuidgen
 
 ## 许可证
 
-MIT License
+[MIT License](https://github.com/briomianopc/sing-box-docker/blob/main/LICENSE)
