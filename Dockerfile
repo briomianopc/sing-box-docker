@@ -4,6 +4,12 @@ WORKDIR /
 
 RUN mkdir -p /etc/sing-box
 
+# 安装 cloudflared
+RUN apk add --no-cache wget && \
+    wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O /usr/local/bin/cloudflared && \
+    chmod +x /usr/local/bin/cloudflared && \
+    apk del wget
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
